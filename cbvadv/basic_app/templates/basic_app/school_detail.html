@@ -1,0 +1,22 @@
+{% extends 'basic_app/basic_app_base.html' %}
+
+{% block body_block %}
+<h1>School Detail page</h1>
+<div class="container">
+  <p>School name : {{school_detail.name}}</p>
+  <p>Princial : {{school_detail.principal}}</p>
+  <p>Location : {{school_detail.location}}</p>
+  <hr>
+  <h1>Student list</h1>
+
+  {% for studentlist in student_detail.students.all %}
+    {% for student in studentlist %}
+
+    <p>{{student.name}} who is {{student.age}} year old.Go to {{student.school}}</p>
+    {% endfor %}
+  {% endfor %}
+</div>
+<div class="container">
+  <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" width="500" height="333">
+</div>
+{% endblock %}
